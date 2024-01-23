@@ -1,0 +1,1 @@
+INSERT INTO expenses (price, name) VALUES (120.00, 'phone-contract');
