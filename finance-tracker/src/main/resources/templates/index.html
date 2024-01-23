@@ -4,6 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+
+    <script>
+ function changeNavColor(){
+    let navElement = document.getElementById("navbar");
+    let navText = document.getElementById("navbar-text");
+
+    if(navElement.classList.contains("bg-body-tertiary")) {
+        navElement.classList.remove("bg-body-tertiary");
+        navElement.style.backgroundColor = "black";
+        navText.style.color = "white";
+    } else {
+        navElement.classList.remove(".bg-dark");
+        navElement.classList.add("bg-body-tertiary");
+        navText.style.color = "black";
+        }
+ }
+    </script>
     <style>
     .button1{
     margin-left: 32.5%;
@@ -14,9 +31,10 @@
 </head>
 <body>
 <!-- As a heading -->
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-body-tertiary" id="navbar">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Finance Tracker</span>
+        <span class="navbar-brand mb-0 h1" id="navbar-text">Finance Tracker</span>
+        <button btn-primary onclick="changeNavColor()"/>
     </div>
 </nav>
 
