@@ -4,12 +4,54 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <style>
+    .button1{
+    margin-left: 32.5%;
+    margin-top: 15%;
+    }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<img th:src="@{/images/spending.webp}" width="80px" height="110px"/>
-<button type="submit" style="margin-left:32.5%; margin-top:20%; background-color: #ffff00">Spending</button>
-<button type="submit" style="margin-left:65%; margin-top: 20%; background-color: #ffff00">Budget</button>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button th:onclick="window.location.href='transactions.html'" type="submit" class="btn btn-primary">
+                <img th:src="@{/images/spending.webp}" width="100px" height="100px"/>
+            </button>
+        </div>
+        <div class="col">
+            <button th:onclick="window.location.href='budget.html'" type="submit" class="btn btn-primary">
+                <img th:src="@{/images/budget.webp}" width="100px" height="100px"/>
+            </button>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <button th:onclick="window.location.href='savings_goals.html'" type="submit" style="margin-top:15%" class="btn btn-primary">
+            <img th:src="@{/images/savings.webp}" width="100px" height="100px"/>
+        </button>
+        </div>
+        <div class="col">
+            <button th:onclick="window.location.href='settings.html'" type="submit" class="btn btn-primary">
+                <img th:src="@{/images/settings.webp}" width="100px" height="100px"/>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--<button th:onclick="window.location.href='transactions.html'" type="submit" class="btn btn-primary">-->
+<!--    <img th:src="@{/images/spending.webp}" width="100px" height="100px"/>-->
+<!--</button>-->
+<!--<button th:onclick="window.location.href='budget.html'" type="submit" style="margin-left:32.5%" class="btn btn-primary">-->
+<!--    <img th:src="@{/images/budget.webp}" width="100px" height="100px"/>-->
+<!--</button>-->
+<!--<button th:onclick="window.location.href='savings_goals.html'" type="submit" style="margin-left:32.5%; margin-top:15%" class="btn btn-primary">-->
+<!--    <img th:src="@{/images/savings.webp}" width="100px" height="100px"/>-->
+<!--</button>-->
+<!--<button th:onclick="window.location.href='settings.html'" type="submit" style="margin-left:32.5%" class="btn btn-primary">-->
+<!--    <img th:src="@{/images/settings.webp}" width="100px" height="100px"/>-->
+<!--</button>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

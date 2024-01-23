@@ -11,4 +11,23 @@ public class Home {
         return "index.html";
     }
 
+    @GetMapping("/transactions.html")
+    public String transactions(){
+        return "transactions.html";
+    }
+
+    @GetMapping("/budget.html")
+    public String budget(){
+        return "budget.html";
+    }
+
+    @GetMapping("/savings_goals.html")
+    public String savings_goals(){
+        return "savings_goals.html";
+    }
+
+    @GetMapping("/settings.html")
+    public String settings(){
+        return "settings.html";
+    }
 }
