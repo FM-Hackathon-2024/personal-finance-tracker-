@@ -66,6 +66,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>7.10.0</version> <!-- Use the latest version -->
+				<configuration>
+					<url>jdbc:postgresql://localhost:5432/postgres</url>
+					<user>postgres</user>
+					<password>changemeinprod!</password>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
