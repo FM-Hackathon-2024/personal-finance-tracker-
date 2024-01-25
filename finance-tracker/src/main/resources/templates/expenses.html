@@ -1,4 +1,3 @@
-<!-- expenses.html -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -9,9 +8,23 @@
 
 <hr/>
 
-<h3>List Expenses</h3>
+<!-- Budget Information -->
+<h3>Budget Information</h3>
+
+<form th:action="@{/web/expenses/setBudget}" method="post">
+    <label for="income">Income:</label>
+    <input type="number" name="income" id="income" th:value="${income}" required />
+
+    <label for="savingsGoal">Savings Goal:</label>
+    <input type="number" name="savingsGoal" id="savingsGoal" th:value="${savingsGoal}" required />
+
+    <button type="submit">Set Budget</button>
+</form>
 
 <hr/>
+
+<!-- List Expenses -->
+<h3>List Expenses</h3>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -34,8 +47,7 @@
     </tbody>
 </table>
 
-<hr/>
-
+<!-- Add Expense -->
 <h3>Add Expense</h3>
 
 <form th:action="@{/web/expenses/add}" th:object="${newExpense}" method="post">
@@ -47,6 +59,20 @@
 
     <button type="submit">Add Expense</button>
 </form>
+
+<hr/>
+<hr/>
+
+<!-- Budget Summary -->
+<h3>Budget Summary</h3>
+<p th:if="${income != null}">Income: <span th:text="${income}"></span></p>
+<p th:if="${savingsGoal != null}">Savings Goal: <span th:text="${savingsGoal}"></span></p>
+<p th:if="${income != null and savingsGoal != null}">
+    Remaining Budget: <span th:text="${remainingBudget}"></span><br/>
+    Savings Goal Met:
+    <span th:if="${remainingBudget >= savingsGoal}">Yes</span>
+    <span th:unless="${remainingBudget >= savingsGoal}">No</span>
+</p>
 
 <!-- Add your JavaScript dependencies here -->
 
