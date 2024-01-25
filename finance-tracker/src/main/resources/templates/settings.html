@@ -11,7 +11,7 @@
             let pageBody = document.getElementById("body");
             let switchText = document.getElementById("flexSwitchLabel");
 
-            if(navElement.classList.contains("bg-body-tertiary")) {
+            if(navElement.classList.contains(rgb(53,77,168))) {
                 navElement.classList.remove("bg-body-tertiary");
                 navElement.style.backgroundColor = "black";
                 navText.style.color = "white";
@@ -20,9 +20,9 @@
             }
             else {
                 navElement.classList.remove(".bg-dark");
-                navElement.classList.add("bg-body-tertiary");
+                navElement.classList.add(rgb(53,77,168));
                 navText.style.color = "black";
-                pageBody.style.backgroundColor = "white";
+                pageBody.style.backgroundColor = rgb(73,55,168);
                 switchText.style.color = "black";
             }
         }

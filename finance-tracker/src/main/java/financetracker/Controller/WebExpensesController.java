@@ -8,10 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
-@RequestMapping("/web/expenses")
+@RequestMapping("/expenses")
 public class WebExpensesController {
 
     @Autowired
@@ -51,23 +50,19 @@ public class WebExpensesController {
         model.addAttribute("expenses", expenses);
         model.addAttribute("newExpense", new Expenses());
 
-        return "expenses"; // Assuming you have an expenses.html Thymeleaf template
+        return "transactions.html";
     }
 
-
-
-
-
     @PostMapping("/add")
-    public String addExpense(@ModelAttribute Expenses newExpense) {
+    public String addExpense(@ModelAttribute("newExpense") Expenses newExpense) {
         expenseRepository.save(newExpense);
-        return "redirect:/web/expenses";
+        return "redirect:/expenses";
     }
 
     @PostMapping("/delete/{id}")
     public String deleteExpense(@PathVariable Long id) {
         expenseRepository.deleteById(id);
-        return "redirect:/web/expenses";
+        return "redirect:/expenses";
     }
 
     @PostMapping("/setBudget")
@@ -84,6 +79,6 @@ public class WebExpensesController {
         model.addAttribute("income", income);
         model.addAttribute("savingsGoal", savingsGoal);
 
-        return "redirect:/web/expenses";
+        return "redirect:/expenses";
     }
 }
