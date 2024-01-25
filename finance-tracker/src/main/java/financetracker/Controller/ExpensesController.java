@@ -27,8 +27,8 @@ public class ExpensesController {
     @DeleteMapping("/{id}")
     public String deleteExpense(@PathVariable Long id) {
         try {
-            expenseRepository.findById(String.valueOf(id)).get();
-            expenseRepository.deleteById(String.valueOf(id));
+            expenseRepository.findById(id).get();
+            expenseRepository.deleteById(id);
             return "Expense deleted successfully";
         } catch (Exception e) {
             return "Expense not found";
