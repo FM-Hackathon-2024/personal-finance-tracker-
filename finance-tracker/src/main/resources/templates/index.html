@@ -4,36 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Finance Tracker</title>
-
-    <script>
- function changeNavColor(){
-    let navElement = document.getElementById("navbar");
-    let navText = document.getElementById("navbar-text");
-    let pageBody = document.getElementById("body");
-
-    if(navElement.classList.contains("bg-body-tertiary")) {
-        navElement.classList.remove("bg-body-tertiary");
-        navElement.style.backgroundColor = "black";
-        navText.style.color = "white";
-        pageBody.style.backgroundColor = "black";
-    } else {
-        navElement.classList.remove(".bg-dark");
-        navElement.classList.add("bg-body-tertiary");
-        navText.style.color = "black";
-        pageBody.style.backgroundColor = "white";
-        }
- }
-    </script>
     <style>
-    .button1{
-    margin-left: 32.5%;
-    margin-top: 15%;
-    }
     .container{
     display: grid !important;
     justify-content: center !important;
     align-items: center !important;
     margin-top: 250px !important;
+    }
+    .col-right{
+    margin-left: 50px !important;
     }
     #bottom-row, #bottom-row2{
     margin-top: 150px;
@@ -46,7 +25,6 @@
 <nav class="navbar bg-body-tertiary" id="navbar">
     <div class="container-fluid">
         <span class="navbar-brand mb-0 h1" id="navbar-text">Finance Tracker</span>
-        <button btn-primary onclick="changeNavColor()"></button>
     </div>
 </nav>
 
