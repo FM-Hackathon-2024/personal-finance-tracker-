@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Home {
 
     @GetMapping("/")
-    public String index() {
-        return "index.html";
+    public String welcome_page() {
+        return "welcome_page.html";
     }
 
     @GetMapping("/transactions.html")
@@ -30,4 +30,7 @@ public class Home {
     public String settings(){
         return "settings.html";
     }
+
+    @GetMapping("/index.html")
+    public String index() { return "index.html";}
 }
