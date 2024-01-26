@@ -7,7 +7,30 @@
         #body{
         background-color: rgb(73,55,168);
         }
-    </style>
+        h3{
+        margin-left: 5%;
+        color: white !important;
+        }
+        .text{
+        margin-left: 15%;
+        margin-right: 35%;
+        margin-top: 5%;
+        }
+        h2{
+        color: white !important;
+        }
+        .card{
+        margin-left: 125%;
+        margin-top: -45%;
+        }
+        .card_2{
+        margin-top: 2%;
+        }
+        .card_3{
+        margin-top: 2%;
+        }
+
+</style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body id="body">
@@ -18,15 +41,36 @@
 </nav>
 <br><br>
 <!-- Budget Summary -->
-<h3>Budget Summary</h3>
-<p th:if="${income != null}">Income: <span th:text="${income}"></span></p>
-<p th:if="${savingsGoal != null}">Savings Goal: <span th:text="${savingsGoal}"></span></p>
-<p th:if="${income != null and savingsGoal != null}">
-    Remaining Budget: <span th:text="${remainingBudget}"></span><br/>
-    Savings Goal Met:
-    <span th:if="${remainingBudget >= savingsGoal}">Yes</span>
-    <span th:unless="${remainingBudget >= savingsGoal}">No</span>
-</p>
+<h3>Financial tips</h3>
+<br>
+</body>
+<div class="text">
+    <h2>Build A Budget<br><br>Have Some Emergency Funds Aside<br><br>Have A Retirement Plan In Place<br><br>Keep An Eye On Your Credit Score<br><br>Don't Overspend/Impulse Spending</h2>
+    <div class="card card_1" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Tip #1</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <p class="card-text">Only invest money into shares/cryptocurrency that you are prepared to lose.</p>
+        </div>
+    </div>
+    <br>
+    <div class=" card card_2" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Tip #2</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Look out for discounts and yellow stickers in supermarkets</h6>
+            <p class="card-text"></p>
+        </div>
+    </div>
+    <br>
+    <div class="card card_3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Tip #3</h5>
+            <h6 class="card-subtitle mb-2 text-muted"></h6>
+            <p class="card-text">Try not to go with your overdraft, it will reduce your overall credit score if you rely on it too much</p>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
